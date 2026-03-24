@@ -4,9 +4,10 @@ import { AppService } from './app.service';
 import { DemoModule } from './demo/demo.module';
 import { ServiceGeneratedController } from './service-generated/service-generated.controller';
 import { ServiceGeneratedService } from './service-generated/service-generated.service';
+import { FileGeneratedModule } from './file-generated/file-generated.module';
 
 @Module({
-  imports: [DemoModule],
+  imports: [DemoModule, FileGeneratedModule],
   controllers: [AppController, ServiceGeneratedController],
   providers: [AppService, ServiceGeneratedService],
 })
