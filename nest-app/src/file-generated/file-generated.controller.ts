@@ -9,6 +9,6 @@ export class FileGeneratedController {
 
     @Get()
     async findAll() {
-        return this.fileGeneratedService.getData();
+        return this.fileGeneratedService.getShapedProducts();
     }
 }
