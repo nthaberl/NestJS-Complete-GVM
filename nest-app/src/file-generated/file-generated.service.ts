@@ -8,11 +8,19 @@ export class FileGeneratedService {
 
     async getShapedProducts(view?: string): Promise<any[]> {
 
-        const filePath = path.join(process.cwd(), 'data', 'products.json');
+        const response = await fetch(
 
-        const fileContents = await fs.readFile(filePath, 'utf-8');
+            'http://otherview.org/3D4M/data/products.json'
 
-        const rawData = JSON.parse(fileContents);
+        );
+
+        if (!response.ok) {
+
+            throw new Error(`Network error: ${response.status}`);
+
+        }
+
+        const rawData = await response.json();
 
         const shaper = new DataShaper();
 

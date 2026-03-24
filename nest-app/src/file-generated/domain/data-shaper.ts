@@ -8,7 +8,8 @@ export class DataShaper {
                 return rawData.map(item => ({
                     id: item.id,
                     label: item.name,
-                    value: item.value
+                    value: item.value,
+                    studentName: "Natascha Haberl"
                 }));
 
             case 'warehouse':
@@ -16,7 +17,8 @@ export class DataShaper {
                     id: item.id,
                     name: item.name,
                     internalCode: item.internalCode,
-                    location: item.warehouseLocation
+                    location: item.warehouseLocation,
+                    studentName: "Natascha Haberl"
                 }));
 
             default:
